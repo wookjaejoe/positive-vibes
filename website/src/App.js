@@ -1,39 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
-import Fab from '@material-ui/core/Fab';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import Zoom from '@material-ui/core/Zoom';
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
+import React from "react";
+import PropTypes from "prop-types";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
+import Fab from "@material-ui/core/Fab";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import Zoom from "@material-ui/core/Zoom";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import BrittanyCard from "./components/BrittanyCard";
 
 const DEFAULT_BG_COLOR = "#282c34";
 const theme = createMuiTheme({
   palette: {
-    type: 'dark',
+    type: "dark",
     primary: {
       main: DEFAULT_BG_COLOR,
       dark: DEFAULT_BG_COLOR,
     },
     background: {
       paper: DEFAULT_BG_COLOR,
-      default: DEFAULT_BG_COLOR
-    }
+      default: DEFAULT_BG_COLOR,
+    },
   },
   typography: {
-    fontFamily: "monaco, Consolas, Roboto, Helvetica, Arial, sans-serif"
-  }
-})
+    fontFamily: "monaco, Consolas, Roboto, Helvetica, Arial, sans-serif",
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: 'fixed',
+    position: "fixed",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
   },
@@ -52,10 +53,12 @@ function ScrollTop(props) {
   });
 
   const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      "#back-to-top-anchor"
+    );
 
     if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
 
@@ -78,7 +81,6 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
-
   return (
     <MuiThemeProvider theme={theme}>
       <React.Fragment>
@@ -89,13 +91,10 @@ export default function BackToTop(props) {
           </Toolbar>
         </AppBar>
         <Toolbar id="back-to-top-anchor" />
-        <Container>
-          <Box my={2}>
-            {[...new Array(120)]
-              .map(
-                () => `Hello, world`,
-              )
-              .join('\n')}
+
+        <Container maxWidth="sm">
+          <Box my={24}>
+            <BrittanyCard index={2}/>
           </Box>
         </Container>
         <ScrollTop {...props}>
