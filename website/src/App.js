@@ -11,32 +11,19 @@ import Container from "@material-ui/core/Container";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import BrittanyCard from "./components/BrittanyCard";
-
-const DEFAULT_BG_COLOR = "#282c34";
-const theme = createMuiTheme({
-  palette: {
-    type: "dark",
-    primary: {
-      main: DEFAULT_BG_COLOR,
-      dark: DEFAULT_BG_COLOR,
-    },
-    background: {
-      paper: DEFAULT_BG_COLOR,
-      default: DEFAULT_BG_COLOR,
-    },
-  },
-  typography: {
-    fontFamily: "monaco, Consolas, Roboto, Helvetica, Arial, sans-serif",
-  },
-});
+import { Slide, IconButton, Button, Avatar } from "@material-ui/core";
+import AboutMe from "./components/AboutMe";
+import Resume from "./components/Resume"
 
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
   },
 }));
 
@@ -80,29 +67,79 @@ ScrollTop.propTypes = {
   window: PropTypes.func,
 };
 
-export default function BackToTop(props) {
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
   return (
-    <MuiThemeProvider theme={theme}>
-      <React.Fragment>
-        <CssBaseline />
-        <AppBar>
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+function CardWrapper(props) {
+  return (
+    <Box my={10}>
+      <BrittanyCard {...props}>{props.children}</BrittanyCard>
+    </Box>
+  );
+}
+
+export default function App(props) {
+  const classes = useStyles();
+  console.log(process.env);
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <HideOnScroll {...props}>
+        <AppBar color="inherit">
           <Toolbar>
-            <Typography variant="h6">Always positive</Typography>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <Avatar
+                alt="WookJae Jo"
+                src={process.env.PUBLIC_URL + "/favicon.ico"}
+              />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}></Typography>
+            <Button color="inherit">Welcome</Button>
+            <Button color="inherit">Services</Button>
           </Toolbar>
         </AppBar>
-        <Toolbar id="back-to-top-anchor" />
-
-        <Container maxWidth="sm">
-          <Box my={24}>
-            <BrittanyCard index={2}/>
-          </Box>
-        </Container>
-        <ScrollTop {...props}>
-          <Fab color="secondary" size="small" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-          </Fab>
-        </ScrollTop>
-      </React.Fragment>
-    </MuiThemeProvider>
+      </HideOnScroll>
+      <Toolbar />
+      <Container maxWidth="sm">
+        <CardWrapper index={1} title="About Me">
+          <AboutMe />
+        </CardWrapper>
+        <CardWrapper index={2} title="Resume">
+          <Resume />
+        </CardWrapper>
+        <CardWrapper index={3} title="Projects"></CardWrapper>
+        <CardWrapper index={4} title="Experiences"></CardWrapper>
+      </Container>
+      <ScrollTop {...props}>
+        <Fab color="secondary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
+    </React.Fragment>
   );
 }
