@@ -1,5 +1,8 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
+let isDark = true;
+const DEFAULT_BGCOLOR_DARK = "#1e1e21";
+
 export const theme = createMuiTheme({
   typography: {
     fontSize: 13,
@@ -25,14 +28,11 @@ export const theme = createMuiTheme({
     
   },
   palette: {
-    type: "dark",
-    // primary: {
-    //   main: "#1a237e"
-    // },
-    // secondary: {
-    //   main:"#f44336"
-    // },
-    // background: {
-    // },
+    type: isDark ? "dark" : null,
+    background : {
+      default : isDark ? DEFAULT_BGCOLOR_DARK : null,
+      paper: isDark ? DEFAULT_BGCOLOR_DARK : null
+    }
+
   },
 });

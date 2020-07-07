@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Template() {
+export default function Experiences() {
   const classes = useStyles();
   return (
       <Grid container className={classes.root}>

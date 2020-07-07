@@ -1,19 +1,11 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  makeStyles,
-  Fade,
-  Grid,
-  Link,
-  List,
-  ListItem,
-} from "@material-ui/core";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import { Box, Typography, makeStyles, Fade, Link } from "@material-ui/core";
+
+import TechStack from "./TechStack";
 
 const useStyles = makeStyles((theme) => ({
   paragraph: {
-    marginBottom: "0.5rem"
+    marginBottom: "0.5rem",
   },
   desc: {
     color: "#f3c677",
@@ -35,15 +27,6 @@ export default function AboutMe(props) {
   const descTransitDelay = 2500;
 
   const descList = ["Positive", "Creative", "Livin' in SongPa", "Music Lover"];
-
-  const techStacks = [
-    "Java",
-    "Python",
-    "SpringBoot",
-    "React",
-    "Flask",
-    "Docker",
-  ];
 
   setTimeout(() => {
     if (value === descList.length - 1) {
@@ -105,43 +88,17 @@ export default function AboutMe(props) {
         </Box>
         <Typography>
           개발자로 살아가는데 있어 가장 중요한 요소는 변화를 두려워하지 않는 것,
-          스스로 배우려는 자세 그리고 꾸준한 노력이라고 생각합니다. 항상
-          긍정적인 태도로 좋은 변화를 만들겠습니다.
+          스스로 배우려는 자세 그리고 꾸준한 노력이라 생각합니다. 항상 긍정적인
+          태도로 좋은 변화를 만들겠습니다.
         </Typography>
       </Box>
 
       <Typography variant="subtitle1">
         최근 아래 기술을 다루었습니다:
       </Typography>
-      <Grid container>
-        {[0, 1, 2].map((v, i) => (
-          <Grid key={i}>
-            <TechList
-              values={techStacks.filter((_, index) => index % 3 === v)}
-            />
-          </Grid>
-        ))}
-      </Grid>
+      <TechStack
+        values={["Java", "Python", "SpringBoot", "React", "Flask", "Docker"]}
+      />
     </Box>
-  );
-}
-
-function TechList(props) {
-  return (
-    <List>
-      {props.values.map((v, i) => (
-        <ListItem
-          key={i}
-          style={{
-            padding: "0.4rem",
-            paddingLeft: "1rem",
-            paddingRight: "1rem",
-          }}
-        >
-          <ArrowRightIcon />
-          {v}
-        </ListItem>
-      ))}
-    </List>
   );
 }

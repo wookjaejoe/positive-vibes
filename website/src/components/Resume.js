@@ -11,76 +11,79 @@ import { Box, Divider } from "@material-ui/core";
 
 function TimelineEvent(props) {
   return (
-    <TimelineItem>
-      <TimelineOppositeContent style={{ flex: "0 1 auto" }}>
-        <Box width="50px">
-          <Typography style={{color: "#f3c677"}}>{props.time}</Typography>
-        </Box>
-      </TimelineOppositeContent>
-      <TimelineSeparator>
-        <TimelineDot/>
-        {props.end ? null : <TimelineConnector />}
-      </TimelineSeparator>
-      <TimelineContent>{props.children}</TimelineContent>
-    </TimelineItem>
-    
+    <Box>
+      {props.year === undefined | props.start ? null : <TimelineDivider />}
+      <TimelineItem>
+        <TimelineOppositeContent style={{ flex: "0 1 auto" }}>
+          <Box width="50px">
+            {/* <Typography style={{ color: "#f3c677" }}>
+              {(props.year === undefined ? "" : props.year) + " " + (props.month === undefined ? "" : props.month)}
+            </Typography> */}
+            <Typography style={{ color: "#f3c677" }}>
+              {props.year === undefined ? null : props.year}
+            </Typography>
+            <Typography variant="caption" style={{ color: "#f3c677" }}>
+              {props.month === undefined ? null : props.month}
+            </Typography>
+          </Box>
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          {props.end ? null : <TimelineConnector />}
+        </TimelineSeparator>
+        <TimelineContent>{props.children}</TimelineContent>
+      </TimelineItem>
+    </Box>
   );
 }
 
 function TimelineDivider() {
-  return <Divider style={{marginTop: "8px"}} />
+  return <Divider style={{ marginTop: "8px" }} />;
 }
 
 export default function Resume() {
   return (
     <React.Fragment>
       <Timeline>
-        <TimelineEvent time="2017 Feb">
+        <TimelineEvent year="2017" month="Feb" start={true}>
           <Typography>
             강원대학교 일반대학원 석사과정 졸업 - 전자통신공학 전공
           </Typography>
         </TimelineEvent>
-        <TimelineDivider />
-        <TimelineEvent time="2016 Dec">
+        <TimelineEvent year="2016" month="Dec">
           <Typography>슈어소프트테크 입사</Typography>
         </TimelineEvent>
-        <TimelineDivider />
-        <TimelineEvent time="2015 Mar">
+        <TimelineEvent year="2015" month="Mar">
           <Typography>
             강원대학교 일반대학원 석사과정 입학 - 전자통신공학 전공
           </Typography>
         </TimelineEvent>
-        <TimelineEvent time="2015 Feb">
+        <TimelineEvent month="Feb">
           <Typography>강원대학교 전자통신공학과 학사과정 졸업</Typography>
         </TimelineEvent>
-        <TimelineDivider />
-        <TimelineEvent time="2012 May">
+        <TimelineEvent year="2012" month="May">
           <Typography>산업정보통신 연구실(IIC Lab) 입실</Typography>
         </TimelineEvent>
-        <TimelineDivider />
-        <TimelineEvent time="2011 Sep">
+        <TimelineEvent year="2011" month="Sep">
           <Typography>강원대학교 복학 - 전자통신공학 전공</Typography>
         </TimelineEvent>
-        <TimelineEvent time="2011 Aug">
+        <TimelineEvent month="Aug">
           <Typography>육군 병장 만기 전역</Typography>
         </TimelineEvent>
-        <TimelineDivider />
-        <TimelineEvent time="2009 Oct">
+        <TimelineEvent year="2009" month="Oct">
           <Typography>육군 입대</Typography>
         </TimelineEvent>
-        <TimelineEvent time="2009 Mar">
+        <TimelineEvent month="Mar">
           <Typography>강원대학교 전기전자공학부 입학</Typography>
         </TimelineEvent>
-        <TimelineEvent time="2009 Feb">
+        <TimelineEvent month="Feb">
           <Typography>창신고등학교 자연계 졸업</Typography>
         </TimelineEvent>
-        <TimelineDivider />
-        <TimelineEvent time="....">
+        <TimelineEvent year="....">
           <Typography>......</Typography>
         </TimelineEvent>
-        <TimelineDivider />
-        <TimelineEvent time="1991" end={true}>
-          <Typography>태어남</Typography>
+        <TimelineEvent year="1991" month="Jan" end={true}>
+          <Typography>창원시 마산합포구에서 태어남</Typography>
         </TimelineEvent>
       </Timeline>
     </React.Fragment>

@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 function CardIndex(props) {
   const classes = useStyles();
   return (
-    <Typography variant="h3" className={classes.cardIndex}>
+    <Typography variant="h6" className={classes.cardIndex}>
       {(props.value + ".").padStart(3, "0")}
     </Typography>
   );
@@ -21,7 +21,7 @@ function CardIndex(props) {
 
 function CardTitle(props) {
   return (
-    <Typography variant="h3">
+    <Typography variant="h2" style={{fontWeight: "bold"}}>
       {props.value}
     </Typography>
   );
