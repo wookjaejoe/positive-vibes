@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, makeStyles, Divider, Typography, Box } from "@material-ui/core";
+import { Grid, makeStyles, Divider, Typography, Box, Container } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
 
 const useStyles = makeStyles((theme) => ({
@@ -21,34 +21,32 @@ function CardIndex(props) {
 
 function CardTitle(props) {
   return (
-    <Typography variant="h2" style={{fontWeight: "bold"}}>
+    <Typography variant="h3" style={{fontWeight: "bold"}}>
       {props.value}
     </Typography>
   );
 }
 
-export default class BritannyCard extends React.Component {
-  render() {
+export default function BritannyCard(props) {
     return (
-      <Box>
+      <Container maxWidth={props.maxWidth === undefined ? "md" : props.maxWidth}>
         <Box mb={1}>
           <Grid container alignItems="flex-end">
             <Grid>
-              <CardIndex value={this.props.index} />
+              <CardIndex value={props.index} />
             </Grid>
             <Grid>
-              <CardTitle value={this.props.title} />
+              <CardTitle value={props.title} />
             </Grid>
-            <Typography variant="caption">{this.props.caption}</Typography>
+            <Typography variant="caption">{props.caption}</Typography>
           </Grid>
         </Box>
         <Divider light></Divider>
         <Box my={1}>
-          {this.props.children !== undefined ? this.props.children
+          {props.children !== undefined ? props.children
           : <Skeleton variant="rect" height={400} />
         }
         </Box>
-      </Box>
+      </Container>
     );
-  }  
 }

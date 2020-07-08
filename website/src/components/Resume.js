@@ -16,13 +16,10 @@ function TimelineEvent(props) {
       <TimelineItem>
         <TimelineOppositeContent style={{ flex: "0 1 auto" }}>
           <Box width="50px">
-            {/* <Typography style={{ color: "#f3c677" }}>
-              {(props.year === undefined ? "" : props.year) + " " + (props.month === undefined ? "" : props.month)}
-            </Typography> */}
-            <Typography style={{ color: "#f3c677" }}>
+            <Typography style={{ color: "#ffd687" }}>
               {props.year === undefined ? null : props.year}
             </Typography>
-            <Typography variant="caption" style={{ color: "#f3c677" }}>
+            <Typography variant="caption" style={{ color: "#ffd687" }}>
               {props.month === undefined ? null : props.month}
             </Typography>
           </Box>

@@ -93,9 +93,7 @@ export default function AboutMe(props) {
         </Typography>
       </Box>
 
-      <Typography variant="subtitle1">
-        최근 아래 기술을 다루었습니다:
-      </Typography>
+      <Typography>최근 아래 기술을 다루었습니다:</Typography>
       <TechStack
         values={["Java", "Python", "SpringBoot", "React", "Flask", "Docker"]}
       />

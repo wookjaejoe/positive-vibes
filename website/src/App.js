@@ -9,10 +9,12 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import BrittanyCard from "./components/BrittanyCard";
-import { Slide, IconButton, Button, Avatar } from "@material-ui/core";
+import { Slide, IconButton, Button, Avatar, Divider } from "@material-ui/core";
 import AboutMe from "./components/AboutMe";
-import Resume from "./components/Resume"
-import Projects from "./components/Projects"
+import Resume from "./components/Resume";
+import Projects from "./components/Projects";
+import Experiences from "./components/Experiences";
+import Papers from "./components/Papers";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+  },
+  menuButton: {
+    color: "#5bf",
   },
 }));
 
@@ -53,6 +58,16 @@ function CardWrapper(props) {
   );
 }
 
+function MenuDivider() {
+  return (
+    <Divider
+      flexItem
+      orientation="vertical"
+      style={{ height: "1rem", alignSelf: "center" }}
+    />
+  );
+}
+
 export default function App(props) {
   const classes = useStyles();
   console.log(process.env);
@@ -74,25 +89,29 @@ export default function App(props) {
               />
             </IconButton>
             <Typography variant="h6" className={classes.title}></Typography>
-            <Button color="inherit">Welcome</Button>
-            <Button color="inherit">Services</Button>
+            <Button className={classes.menuButton}>Welcome</Button>
+            <MenuDivider />
+            <Button className={classes.menuButton}>Services</Button>
           </Toolbar>
         </AppBar>
       </HideOnScroll>
       <Toolbar />
-      <Container maxWidth="sm">
-        <CardWrapper index={1} title="About Me">
-          <AboutMe />
-        </CardWrapper>
-        <CardWrapper index={2} title="Resume">
-          <Resume />
-        </CardWrapper>
-        <CardWrapper index={3} title="Projects">
-          <Projects />
-        </CardWrapper>
-        <CardWrapper index={4} title="Experiences"></CardWrapper>
-        <CardWrapper index={4} title="Contact"></CardWrapper>
-      </Container>
+      <CardWrapper index={1} maxWidth="sm" title="About Me">
+        <AboutMe />
+      </CardWrapper>
+      <CardWrapper index={2} maxWidth="sm" title="Resume">
+        <Resume />
+      </CardWrapper>
+      <CardWrapper index={3} title="Projects">
+        <Projects />
+      </CardWrapper>
+      <CardWrapper index={4} title="Experiences">
+        <Experiences />
+      </CardWrapper>
+      <CardWrapper index={5} title="Papers">
+        <Papers />
+      </CardWrapper>
+      <CardWrapper index={6} maxWidth="sm" title="Contact"></CardWrapper>
     </React.Fragment>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, List, ListItem } from "@material-ui/core";
+import { Grid, List, ListItem, Typography } from "@material-ui/core";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
 export default function TechStack(props) {
@@ -22,7 +22,7 @@ export default function TechStack(props) {
                   }}
                 >
                   <ArrowRightIcon />
-                  {v}
+                  <Typography variant="body2">{v}</Typography>
                 </ListItem>
               ))}
           </List>
