@@ -38,6 +38,7 @@ export default function ProjectCard(props) {
       >
         <Box>
           <Typography className={classes.title}>{props.title}</Typography>
+          <Typography variant="subtitle2">{props.subtitle}</Typography>
           <Typography variant="caption">{props.caption}</Typography>
           {props.captions === undefined
             ? null
