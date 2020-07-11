@@ -63,7 +63,7 @@ export default function ProjectCard(props) {
         </Box>
       </AccordionSummary>
       <AccordionDetails>
-        <Box pl="16px" borderLeft="1px solid rgba(128,128,128, 0.5)">
+        <Box>
           {props.children === undefined ? (
             <Skeleton my={0} height={180} />
           ) : (

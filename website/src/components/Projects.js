@@ -8,6 +8,7 @@ import {
   Chip,
 } from "@material-ui/core";
 import ProjectCard from "./ProjectCard";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -19,6 +20,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+function TextWithArrow(props) {
+  return (
+    <Box display="flex">
+<ArrowRightIcon />
+<Typography>{props.text}</Typography>
+    </Box>
+    
+  )
+}
 
 const projects = [
   <ProjectCard
@@ -104,7 +115,7 @@ const projects = [
     tags={["C++"]}
   ></ProjectCard>,
   <ProjectCard
-    title="스마트 디바이스 기반 로봇의 대규모 서비스 및 H/W 독립적인 서비스 공용화 지원을 위한 서비스 플랫폼 기술 개발과 핵심 로봇서비스 및 제품 3종 개발"
+    title="스마트 디바이스 기반 로봇의 대규모 서비스 및 H/W 독립적인 서비스 공용화 지원을 위한 서비스 플랫폼 기술 개발과 핵심 로봇 서비스 및 제품 3종 개발"
     caption="Sep 2013 ~ May 2015 | 강원대학교 산학협력단 | 산업정보통신 연구실 | 정부과제"
     tags={["Java", "C++", "Eclipse RCP"]}
   ></ProjectCard>,
@@ -117,7 +128,10 @@ const projects = [
     title="큐브 타이머를 지원하는 안드로이드 애플리케이션 및 커뮤니티 서비스 개발"
     caption="Dec 2013 ~ Feb 2014 | Park distribution co. | 아르바이트"
     tags={["Java", "Android"]}
-  ></ProjectCard>,
+  >
+    <TextWithArrow text="A" />
+    <TextWithArrow text="B" />
+  </ProjectCard>,
 ];
 
 export default function Projects() {
