@@ -22,8 +22,22 @@ const useStyles = makeStyles((theme) => ({
 
 const projects = [
   <ProjectCard
-    isExpanded={true}
+    title="Positive Vibes"
+    subtitle="개인 웹사이트"
+    caption="Now ~ Jun 2020 | 개인 프로젝트"
+    tags={[
+      "React",
+      "Gatsby",
+      "Material UI"
+    ]}
+  >
+    <Typography>
+      Owen Site ...
+    </Typography>
+  </ProjectCard>,
+  <ProjectCard
     title="CodeScroll STATIC"
+    subtitle="웹 기반 정적 코드 분석 도구"
     caption="Now ~ Mar 2019 | 슈어소프트테크"
     tags={[
       "Java",
@@ -43,33 +57,36 @@ const projects = [
       Windows/Linux 클라이언트 사이드 프로그램을 개발하였고, DevOps도
       담당하였습니다.
     </Typography>
-
-    <br />
   </ProjectCard>,
   <ProjectCard
-    title="EPRI MetricHub"
+    title="Security Data Aggregation Framework"
+    subtitle="전기 도메인 보안 취약점 검증 플랫폼"
     caption="Jan 2018 ~ Apr 2018 | 슈어소프트테크"
-    tags={["Java", "Python", "Groovy", "JS|HTML|CSS", "Ecilpse RCP", "HTTP"]}
+    tags={["Java", "Python", "Groovy", "JS|HTML|CSS", "Eclipse RCP", "HTTP"]}
   ></ProjectCard>,
   <ProjectCard
     title="CodeScroll SNIPER"
+    subtitle="C/C++ 코드 정적 검증 도구 - 런타임 오류 검증"
     caption="Mar 2017 ~ Dec 2017 | 슈어소프트테크"
-    tags={["Java", "Ecilpse RCP", "Sqlite DB", "Jenkins"]}
+    tags={["Java", "Eclipse RCP", "Sqlite DB", "Jenkins"]}
   ></ProjectCard>,
   <ProjectCard
     title="CodeScroll Code Inspector"
+    subtitle="C/C++ 코드 정적 검증 도구 - 코딩 규칙 검증"
     caption="Mar 2017 ~ Dec 2017 | 슈어소프트테크"
-    tags={["Java", "Ecilpse RCP", "Sqlite DB", "Jenkins"]}
+    tags={["Java", "Eclipse RCP", "Sqlite DB", "Jenkins"]}
   ></ProjectCard>,
   <ProjectCard
     title="EPRI Security Metric Calculator"
+    subtitle="전기 도메인 보안 취약점 검증 도구"
     caption="Mar 2017 ~ Jun 2017 | 슈어소프트테크"
-    tags={["Java", "Groovy", "JS|HTML|CSS", "Ecilpse RCP"]}
+    tags={["Java", "Groovy", "JS|HTML|CSS", "Eclipse RCP"]}
   ></ProjectCard>,
   <ProjectCard
     title="CodeScroll Controller Tester"
+    subtitle="C/C++ 코드 동적 검증 도구"
     caption="Jan 2017 ~ Apr 2017 | 슈어소프트테크"
-    tags={["Java", "Ecilpse RCP", "Sqlite DB", "Jenkins"]}
+    tags={["Java", "Eclipse RCP", "Sqlite DB", "Jenkins"]}
   ></ProjectCard>,
   <ProjectCard
     title="사용자 편의 중심 서비스 로봇 응용 개발을 지원하는 로봇 소프트웨어 플랫폼 개발"
@@ -117,8 +134,9 @@ export default function Projects() {
   return (
     <Box >
       <Box m={3} className={classes.tags}>
+        <Typography>All used : </Typography>
         {Array.from(tagCountMap.keys()).map((key) => (
-          <Badge badgeContent={tagCountMap.get(key)} color="primary">
+          <Badge badgeContent={tagCountMap.get(key)} color="primary" invisible={tagCountMap.get(key) === 1}>
             <Chip
               variant="outlined"
               size="small"

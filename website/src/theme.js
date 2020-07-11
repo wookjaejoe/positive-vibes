@@ -15,7 +15,7 @@ export const theme = createMuiTheme({
       paper: isDark ? DEFAULT_BGCOLOR_DARK : null
     },
     primary: {
-      main: "#3f51b5"
+      main: "#2979ff"
     },
     secondary: {
       main: "#14a37f"
