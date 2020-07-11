@@ -25,7 +25,7 @@ function TimelineEvent(props) {
           </Box>
         </TimelineOppositeContent>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot variant="outlined" color="primary" />
           {props.end ? null : <TimelineConnector />}
         </TimelineSeparator>
         <TimelineContent>{props.children}</TimelineContent>
