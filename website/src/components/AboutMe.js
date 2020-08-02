@@ -26,7 +26,7 @@ export default function AboutMe(props) {
   const [value, setValue] = React.useState(0);
   const descTransitDelay = 2500;
 
-  const descList = ["Positive", "Creative", "Livin' in SongPa", "Music Lover"];
+  const descList = ["Programmer", "Positive", "Creative", "Conscientiousness"];
 
   setTimeout(() => {
     if (value === descList.length - 1) {

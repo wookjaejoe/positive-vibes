@@ -28,7 +28,6 @@ export default function ProjectCard(props) {
     setExpanded(_isExpanded);
   };
 
-  // TODO : 링크
   return (
     <Accordion expanded={isExpanded} onChange={handleChange(true)}>
       <AccordionSummary
@@ -49,7 +48,7 @@ export default function ProjectCard(props) {
                 </Typography>
               ))}
           <Box className={classes.tags}>
-            {props.tags === undefined
+            {props.tags === undefined | null
               ? null
               : props.tags.map((v, i) => (
                   <Chip
@@ -63,7 +62,7 @@ export default function ProjectCard(props) {
         </Box>
       </AccordionSummary>
       <AccordionDetails>
-        <Box>
+        <Box px={2}>
           {props.children === undefined ? (
             <Skeleton my={0} height={180} />
           ) : (
