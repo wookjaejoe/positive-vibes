@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/positive-vibes/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/positive-vibes/static/js/main.2c6e9435.chunk.js",
+    "main.js.map": "/positive-vibes/static/js/main.2c6e9435.chunk.js.map",
+    "runtime-main.js": "/positive-vibes/static/js/runtime-main.5a377ba8.js",
+    "runtime-main.js.map": "/positive-vibes/static/js/runtime-main.5a377ba8.js.map",
+    "static/js/2.7905931f.chunk.js": "/positive-vibes/static/js/2.7905931f.chunk.js",
+    "static/js/2.7905931f.chunk.js.map": "/positive-vibes/static/js/2.7905931f.chunk.js.map",
+    "index.html": "/positive-vibes/index.html",
+    "precache-manifest.84d1e2afb77aae6787ddfb61db05c18b.js": "/positive-vibes/precache-manifest.84d1e2afb77aae6787ddfb61db05c18b.js",
+    "service-worker.js": "/positive-vibes/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/positive-vibes/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.7905931f.chunk.js.LICENSE.txt": "/positive-vibes/static/js/2.7905931f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a377ba8.js",
+    "static/js/2.7905931f.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.2c6e9435.chunk.js"
+  ]
+}
