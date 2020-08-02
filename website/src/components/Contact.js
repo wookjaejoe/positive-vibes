@@ -15,7 +15,7 @@ function TextWithIcon(props) {
 export default function Contact() {
   return (
     <Box>
-      <Typography>언제든 편하게 연락주세요. 감사합니다.</Typography>
+      <Typography>읽어주셔서 감사합니다.</Typography>
       <br />
       <TextWithIcon text="010-3711-9275">
         <PhoneAndroidIcon />
