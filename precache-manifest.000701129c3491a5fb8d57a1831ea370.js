@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5d144e145fa216b4654707bc567eef1f",
+    "revision": "4da35853f7653443f761d70fa1caa8b9",
     "url": "/positive-vibes/index.html"
   },
   {
-    "revision": "84b5716089d69f400306",
+    "revision": "245aaf95853fb5159069",
     "url": "/positive-vibes/static/css/main.69eda509.chunk.css"
   },
   {
-    "revision": "65a808cafb497ac5872c",
-    "url": "/positive-vibes/static/js/2.f89905b9.chunk.js"
+    "revision": "07f79877bf096402bee4",
+    "url": "/positive-vibes/static/js/2.7905931f.chunk.js"
   },
   {
     "revision": "138135b948fb4b29104b21367cb21241",
-    "url": "/positive-vibes/static/js/2.f89905b9.chunk.js.LICENSE.txt"
+    "url": "/positive-vibes/static/js/2.7905931f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "84b5716089d69f400306",
-    "url": "/positive-vibes/static/js/main.0bc10570.chunk.js"
+    "revision": "245aaf95853fb5159069",
+    "url": "/positive-vibes/static/js/main.d62cc315.chunk.js"
   },
   {
     "revision": "220451373ee33c3271b3",
