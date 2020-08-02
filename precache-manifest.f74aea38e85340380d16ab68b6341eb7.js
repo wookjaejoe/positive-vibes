@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4b61f9012572208e77a28257252cd35b",
+    "revision": "e0e04ba39ff7e94a68e0a7bfb10b7a52",
     "url": "/positive-vibes/index.html"
   },
   {
-    "revision": "c222390b011b0de657fb",
+    "revision": "13cc981ee9f2b8da0c60",
     "url": "/positive-vibes/static/css/main.69eda509.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/positive-vibes/static/js/2.7905931f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c222390b011b0de657fb",
-    "url": "/positive-vibes/static/js/main.9f70fc20.chunk.js"
+    "revision": "13cc981ee9f2b8da0c60",
+    "url": "/positive-vibes/static/js/main.f2178c87.chunk.js"
   },
   {
     "revision": "220451373ee33c3271b3",
