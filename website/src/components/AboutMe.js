@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Typography, makeStyles, Fade, Link } from "@material-ui/core";
+import {
+  Box,
+  Typography,
+  makeStyles,
+  Fade,
+  Link,
+  Divider,
+} from "@material-ui/core";
+import ButtonBase from "@material-ui/core/ButtonBase";
 
 import TechStack from "./TechStack";
 
@@ -19,7 +27,110 @@ const useStyles = makeStyles((theme) => ({
   blockquote: {
     fontStyle: "italic",
   },
+  image: {
+    position: "relative",
+    height: 281,
+    [theme.breakpoints.down("xs")]: {
+      width: "100% !important", // Overrides inline-style
+      height: 100,
+    },
+    "&:hover, &$focusVisible": {
+      zIndex: 1,
+      "& $imageBackdrop": {
+        opacity: 0.15,
+      },
+      "& $imageMarked": {
+        opacity: 0,
+      },
+      "& $imageTitle": {
+        border: "4px solid currentColor",
+      },
+    },
+  },
+  focusVisible: {},
+  imageButton: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: theme.palette.common.white,
+  },
+  imageSrc: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundSize: "cover",
+    backgroundPosition: "center 40%",
+  },
+  imageBackdrop: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: theme.palette.common.black,
+    opacity: 0.4,
+    transition: theme.transitions.create("opacity"),
+  },
+  imageTitle: {
+    position: "relative",
+    padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
+      theme.spacing(1) + 6
+    }px`,
+    transition: theme.transitions.create("opacity"),
+  },
+  imageMarked: {
+    height: 3,
+    width: 18,
+    backgroundColor: theme.palette.common.white,
+    position: "absolute",
+    bottom: -2,
+    left: "calc(50% - 9px)",
+    transition: theme.transitions.create("opacity"),
+  },
 }));
+
+function Portfolio() {
+  const classes = useStyles();
+  return (
+    <Box display="flex" justifyContent="center">
+      <ButtonBase
+        focusRipple
+        className={classes.image}
+        focusVisibleClassName={classes.focusVisible}
+        style={{ width: "500px" }}
+        href={process.env.PUBLIC_URL + "/portfolio_positive-vibes.pdf"}
+        download
+      >
+        <span className={classes.imageSrc} style={{}}>
+          <img
+            alt="portfolio-main"
+            src={process.env.PUBLIC_URL + "/portfolio-main.png"}
+            width="500px"
+          />
+        </span>
+        <span className={classes.imageBackdrop} />
+        <span className={classes.imageButton}>
+          <Typography
+            component="span"
+            variant="subtitle1"
+            color="inherit"
+            className={classes.imageTitle}
+          >
+            DOWNLOAD PORTFOLIO
+            <span className={classes.imageMarked} />
+          </Typography>
+        </span>
+      </ButtonBase>
+    </Box>
+  );
+}
 
 export default function AboutMe(props) {
   const classes = useStyles();
@@ -92,11 +203,14 @@ export default function AboutMe(props) {
           태도로 좋은 변화를 만들겠습니다.
         </Typography>
       </Box>
-
       <Typography>최근 아래 기술을 다루었습니다:</Typography>
       <TechStack
         values={["Java", "Python", "SpringBoot", "React", "Flask", "Docker"]}
       />
+      <Box py={3}>
+        <Divider />
+      </Box>
+      <Portfolio />
     </Box>
   );
 }

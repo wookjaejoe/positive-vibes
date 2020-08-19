@@ -11,7 +11,7 @@ title: 컴포넌트 기반 실시간 소프트웨어 시스템의 테스트 케�
 subtitle: Methods of Test Case Reduction and Real-Time Test for Component Based Real-Time Software System
 caption: 석사학위논문 2017
 ---
-내용 업데이트 준비중입니다.
+내용 업데이트 준비중...
 
 -----
 ---

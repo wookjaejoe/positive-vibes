@@ -11,10 +11,7 @@ import BrittanyCard from "./components/BrittanyCard";
 import { Slide, IconButton, Button, Avatar, Divider } from "@material-ui/core";
 import AboutMe from "./components/AboutMe";
 import Resume from "./components/Resume";
-import Projects from "./components/Projects";
-import Experiences from "./components/Experiences";
-import Papers from "./components/Papers";
-import Contact from "./components/Contact"
+import Portfolio from "./components/PortfolioWrapper";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,25 +65,6 @@ function MenuDivider() {
   );
 }
 
-const sections = [
-  <CardWrapper index={1} maxWidth="sm" title="About Me">
-    <AboutMe />
-  </CardWrapper>,
-  <CardWrapper index={2} maxWidth="sm" title="Resume">
-    <Resume />
-  </CardWrapper>,
-  <CardWrapper index={3} title="Projects">
-    <Projects />
-  </CardWrapper>,
-  <CardWrapper index={4} title="Experiences">
-    <Experiences />
-  </CardWrapper>,
-  <CardWrapper index={5} title="Papers">
-    <Papers />
-  </CardWrapper>,
-  <CardWrapper index={6} maxWidth="sm" title="Contact"></CardWrapper>,
-];
-
 export default function App(props) {
   const classes = useStyles();
   return (
@@ -120,19 +98,6 @@ export default function App(props) {
       <CardWrapper index={1} maxWidth="sm" title="Resume">
         <Resume />
       </CardWrapper>
-      <CardWrapper index={2} title="Projects">
-        <Projects />
-      </CardWrapper>
-      <CardWrapper index={3} title="Papers">
-        <Papers />
-      </CardWrapper>
-      <CardWrapper index={4} title="Experiences">
-        <Experiences />
-      </CardWrapper>
-      <CardWrapper index={5} maxWidth="sm" title="Contact">
-        <Contact />
-      </CardWrapper>
-      
     </React.Fragment>
   );
 }
