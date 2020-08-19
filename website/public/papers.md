@@ -1,3 +1,4 @@
+
 ---
 title: 소프트웨어 컴포넌트 기반 로봇 시스템을 위한 입출력 연관 기반 테스트 케이스 생성의 새로운 기법
 subtitle: New Method for I/O Relationship-based Test Case Generation for Software Component-based Robot System
@@ -11,7 +12,7 @@ title: 컴포넌트 기반 실시간 소프트웨어 시스템의 테스트 케�
 subtitle: Methods of Test Case Reduction and Real-Time Test for Component Based Real-Time Software System
 caption: 석사학위논문 2017
 ---
-내용 업데이트 준비중...
+업데이트 계획중...
 
 -----
 ---
