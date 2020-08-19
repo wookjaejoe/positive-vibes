@@ -38,7 +38,7 @@ function TimelineDivider() {
   return <Divider style={{ marginTop: "8px" }} />;
 }
 
-export default function Resume() {
+export default function MyTimeline() {
   return (
     <React.Fragment>
       <Timeline>

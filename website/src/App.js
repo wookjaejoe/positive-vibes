@@ -10,7 +10,7 @@ import Box from "@material-ui/core/Box";
 import BrittanyCard from "./components/BrittanyCard";
 import { Slide, IconButton, Button, Avatar, Divider } from "@material-ui/core";
 import AboutMe from "./components/AboutMe";
-import Resume from "./components/Resume";
+import Timeline from "./components/Timeline";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,8 +94,8 @@ export default function App(props) {
       <CardWrapper index={0} maxWidth="sm" title="About Me">
         <AboutMe />
       </CardWrapper>
-      <CardWrapper index={1} maxWidth="sm" title="Resume">
-        <Resume />
+      <CardWrapper index={1} maxWidth="sm" title="Timeline">
+        <Timeline />
       </CardWrapper>
     </React.Fragment>
   );
