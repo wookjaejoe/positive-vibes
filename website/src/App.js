@@ -11,7 +11,6 @@ import BrittanyCard from "./components/BrittanyCard";
 import { Slide, IconButton, Button, Avatar, Divider } from "@material-ui/core";
 import AboutMe from "./components/AboutMe";
 import Resume from "./components/Resume";
-import Portfolio from "./components/PortfolioWrapper";
 
 const useStyles = makeStyles((theme) => ({
   root: {
