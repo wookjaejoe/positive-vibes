@@ -11,7 +11,7 @@ class ProjectContents extends React.Component {
   componentDidMount() {
     if (this.props.src) {
       fetch(this.props.src)
-        .then((response) => response.text())
+        .then((response) => response.text요())
         .then((text) => {
           this.setState({data: parseMdyml(text)})
         });
